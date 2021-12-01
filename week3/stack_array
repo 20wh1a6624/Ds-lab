@@ -1,0 +1,52 @@
+#include<stdio.h>
+   #include<stdlib.h>
+   int size = 5;
+   int s[5];
+   int top = -1;
+   /*int is_full(){
+       if (top == size - 1)
+            return 0;
+       else
+            return 1;
+   
+  int is_empty(){
+        if (top == -1)
+            return 0;
+        else
+            return 1;
+    }
+ */
+  void push(int ele){
+      if(top == size - 1)
+          printf("list is full");
+     else
+          top = top + 1;
+          s[top] = ele;
+  }
+  int pop(){
+      if(top == -1)
+          printf("list is empty, underflow condition");
+     else
+          return s[top--];
+  }
+  int peek(){
+      return s[top];
+  }
+  
+  void display(){
+      for(int i = top; i >= 0; i--){
+          printf("%d",s[i]);
+       }
+  }
+  int main(){
+      push( 5 );
+      push( 6 );
+      push( 89 );
+     display();
+     }
+     /* while(top != -1) {
+       int data = pop(); /// y pop because every time it will remove the first element and makes the next element as the first one.but if if we give peek it will give the first element but it will not remove the first element.and also it will givw the first element only till the loop ends.
+       printf("%d\n",data);
+}
+ }
+*/
