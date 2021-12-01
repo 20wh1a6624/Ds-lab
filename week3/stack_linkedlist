@@ -1,0 +1,50 @@
+#include<stdio.h>
+   #include<stdlib.h>
+   struct node{
+       int data;
+       struct node* link;
+   };
+   struct node *top = NULL,*temp,*curr;
+   void push(int ele){
+       curr = (struct node*)malloc(sizeof(struct node));
+      curr -> data = ele;
+      if(top == NULL)
+         curr -> link = NULL;
+      else
+          curr -> link = top;
+      top = curr;
+  }
+  
+  int pop(){
+      temp = top;
+      if(top == NULL)
+          printf("stack underflow");
+      else{
+          top = top -> link;
+          return temp->data;
+      free(temp);
+      }
+  }
+  int peek(){
+      return (top -> data);
+      }
+  
+  void display(){
+      temp = top;
+      while( temp != NULL){
+          printf("%d", temp -> data);
+          temp = temp -> link;
+          }
+   }
+  
+  int main(){
+  push(5);
+  push(9);
+  push(4);
+  pop();
+  display();
+}
+/*
+output
+95
+*/
